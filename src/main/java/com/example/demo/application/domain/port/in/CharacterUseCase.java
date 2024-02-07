@@ -8,4 +8,8 @@ public interface CharacterUseCase {
     Character createCharacter(Character character);
 
     List<Character> findCharacter();
+
+    Character updateCharacter(Long characterId, Character character) throws Exception;
+
+    void deleteCharacter(Long characterId);
 }

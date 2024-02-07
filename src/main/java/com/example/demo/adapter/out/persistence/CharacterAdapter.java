@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.application.domain.model.Character;
+import com.example.demo.adapter.out.persistence.entity.CharacterEntity;
 import com.example.demo.adapter.out.persistence.mapper.CharacterMapper;
 import com.example.demo.adapter.out.persistence.repository.CharacterRepository;
 import com.example.demo.application.domain.port.out.CharacterPort;
@@ -30,13 +31,22 @@ public class CharacterAdapter implements CharacterPort {
 
     @Override
     public Character getCharacter(Long characterId) {
-        // TODO Auto-generated method stub
-        return null;
+        return this.characterMapper.toDto(this.characterRepository.getReferenceById(characterId));
     }
 
     @Override
-    public Character updateCharacter(Long characterId, Character character) {
-        // TODO Auto-generated method stub
-        return null;
+    public Character updateCharacter(Long characterId, Character character) throws Exception {
+        CharacterEntity updated = this.characterMapper.toEntity(character,
+                this.characterRepository.getReferenceById(characterId));
+        if (updated == null) {
+            throw new Exception(String.format("Character {} non trouvé", characterId));
+        } else {
+            return this.characterMapper.toDto(this.characterRepository.save(updated));
+        }
+    }
+
+    @Override
+    public void deleteCharacter(Long characterId) {
+        this.characterRepository.deleteById(characterId);
     }
 }

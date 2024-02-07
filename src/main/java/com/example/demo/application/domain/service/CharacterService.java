@@ -20,9 +20,20 @@ public class CharacterService implements CharacterUseCase {
     public Character createCharacter(Character character) {
         return this.characterPort.createCharacter(character);
     }
+
     @Override
     public List<Character> findCharacter() {
         return this.characterPort.findCharacter();
     }
-        
+
+    @Override
+    public void deleteCharacter(Long characterId) {
+        this.characterPort.deleteCharacter(characterId);
+    }
+
+    @Override
+    public Character updateCharacter(Long characterId, Character character) throws Exception {
+        return this.characterPort.updateCharacter(characterId, character);
+    }
+
 }
