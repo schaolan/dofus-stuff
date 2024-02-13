@@ -10,6 +10,7 @@ import com.example.demo.adapter.out.persistence.mapper.CharacterMapper;
 import com.example.demo.adapter.out.persistence.repository.CharacterRepository;
 import com.example.demo.application.domain.port.out.CharacterPort;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -25,6 +26,7 @@ public class CharacterAdapter implements CharacterPort {
     }
 
     @Override
+    @Transactional
     public List<Character> findCharacter() {
         return this.characterRepository.findAll().stream().map(this.characterMapper::toDto).toList();
     }
