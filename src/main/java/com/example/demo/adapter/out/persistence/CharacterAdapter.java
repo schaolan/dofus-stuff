@@ -32,6 +32,7 @@ public class CharacterAdapter implements CharacterPort {
     }
 
     @Override
+    @Transactional
     public Character getCharacter(Long characterId) {
         return this.characterMapper.toDto(this.characterRepository.getReferenceById(characterId));
     }

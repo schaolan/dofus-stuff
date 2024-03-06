@@ -11,6 +11,7 @@ import com.example.demo.application.domain.port.in.CharacterUseCase;
 import lombok.RequiredArgsConstructor;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,6 +36,12 @@ public class CharacterController {
     @GetMapping("/characters")
     public ResponseEntity<List<Character>> findCharacters() {
         return ResponseEntity.ok(this.characterUseCase.findCharacter());
+    }
+
+    @GetMapping("/characters/{id}")
+    public ResponseEntity<Character> getCharacter(@PathVariable("id") Long id) {
+        return ResponseEntity.ok(this.characterUseCase.getCharacter(id));
+
     }
 
 }

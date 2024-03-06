@@ -3,7 +3,6 @@ package com.example.demo.adapter.out.persistence.mapper;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
 import com.example.demo.adapter.out.persistence.entity.CharacterCaracteristicEntity;

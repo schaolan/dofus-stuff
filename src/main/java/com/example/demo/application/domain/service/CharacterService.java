@@ -27,6 +27,11 @@ public class CharacterService implements CharacterUseCase {
     }
 
     @Override
+    public Character getCharacter(Long id) {
+        return this.characterPort.getCharacter(id);
+    }
+
+    @Override
     public void deleteCharacter(Long characterId) {
         this.characterPort.deleteCharacter(characterId);
     }

@@ -9,6 +9,8 @@ public interface CharacterUseCase {
 
     List<Character> findCharacter();
 
+    Character getCharacter(Long characterId);
+
     Character updateCharacter(Long characterId, Character character) throws Exception;
 
     void deleteCharacter(Long characterId);
