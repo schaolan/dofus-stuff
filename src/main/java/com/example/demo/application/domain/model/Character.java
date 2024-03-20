@@ -5,5 +5,5 @@ import java.util.List;
 /**
  * Character
  */
-public record Character(Long id, String nickname, Integer level, List<CharacterCaracteristic> caracteristics) {
+public record Character(Long id, String nickname, Integer level, List<CaracteristicDetail> caracteristics) {
 }

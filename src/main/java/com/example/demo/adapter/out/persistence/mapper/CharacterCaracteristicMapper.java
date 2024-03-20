@@ -6,15 +6,15 @@ import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 
 import com.example.demo.adapter.out.persistence.entity.CharacterCaracteristicEntity;
-import com.example.demo.application.domain.model.CharacterCaracteristic;
+import com.example.demo.application.domain.model.CaracteristicDetail;
 
 @Mapper(componentModel = "spring", injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 public interface CharacterCaracteristicMapper {
-    CharacterCaracteristic toDto(CharacterCaracteristicEntity caracteristicEntity);
+    CaracteristicDetail toDto(CharacterCaracteristicEntity caracteristicEntity);
 
     @InheritInverseConfiguration
-    CharacterCaracteristicEntity toEntity(CharacterCaracteristic caracteristic);
+    CharacterCaracteristicEntity toEntity(CaracteristicDetail caracteristic);
 
-    CharacterCaracteristicEntity toEntity(CharacterCaracteristic caracteristic,
+    CharacterCaracteristicEntity toEntity(CaracteristicDetail caracteristic,
             @MappingTarget CharacterCaracteristicEntity caracteristicEntity);
 }
