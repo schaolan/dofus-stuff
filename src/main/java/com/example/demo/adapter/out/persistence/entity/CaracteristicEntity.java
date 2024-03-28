@@ -2,8 +2,6 @@ package com.example.demo.adapter.out.persistence.entity;
 
 import com.example.demo.application.domain.model.enumeration.CaracteristicElement;
 import com.example.demo.application.domain.model.enumeration.CaracteristicType;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

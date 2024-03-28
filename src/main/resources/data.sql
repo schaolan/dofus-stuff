@@ -12,3 +12,10 @@ insert into character_caracteristic (character_id, caracteristic_id, quantity) v
 insert into character_caracteristic (character_id, caracteristic_id, quantity) values(1, 2, 200);
 insert into character_caracteristic (character_id, caracteristic_id, quantity) values(1, 3, 200);
 insert into character_caracteristic (character_id, caracteristic_id, quantity) values(1, 4, 200);
+
+insert into gear(label) values('Voile d''encre');
+insert into gear(label) values('Cape de l''oeuil attentif');
+
+insert into gear_caracteristic(gear_id, caracteristic_id, quantity) values(1, 1, 80);
+insert into gear_caracteristic(gear_id, caracteristic_id, quantity) values(1, 2, 80);
+insert into gear_caracteristic(gear_id, caracteristic_id, quantity) values(2, 3, 100);

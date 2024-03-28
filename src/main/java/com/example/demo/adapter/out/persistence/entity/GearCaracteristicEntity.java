@@ -21,10 +21,12 @@ import lombok.Setter;
 public class GearCaracteristicEntity {
     @Id
     @ManyToOne
-    @JoinColumn(name= "gear_id", nullable = false)
+    @JoinColumn(name = "gear_id", nullable = false)
     private GearEntity gear;
     @Id
     @ManyToOne
     @JoinColumn(name = "caracteristic_id", nullable = false)
     private CaracteristicEntity caracteristic;
+
+    private Integer quantity;
 }

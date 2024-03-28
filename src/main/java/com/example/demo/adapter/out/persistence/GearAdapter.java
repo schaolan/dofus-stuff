@@ -10,6 +10,7 @@ import com.example.demo.application.domain.model.Gear;
 import com.example.demo.application.domain.model.QueryFilter;
 import com.example.demo.application.domain.port.out.GearPort;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -20,8 +21,10 @@ public class GearAdapter implements GearPort {
     private final GearMapper gearMapper;
 
     @Override
+    @Transactional
     public List<Gear> findGears(QueryFilter queryFilter) {
-        return this.gearRepository.findAll().stream().map(this.gearMapper::toDto).toList();
+        return this.gearRepository.findAll(gearRepository.caracteristic(90F, null, null)).stream()
+                .map(this.gearMapper::toDto).toList();
     }
 
 }

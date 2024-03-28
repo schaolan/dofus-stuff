@@ -20,8 +20,9 @@ public class GearController {
 
     private final GearUseCase gearUseCase;
 
-    @GetMapping
-    public ResponseEntity<List<Gear>> findGear(@RequestParam QueryFilter queryFilter) {
+    @GetMapping("/gears")
+    public ResponseEntity<List<Gear>> findGear(
+            @RequestParam(name = "queryFilter", required = false) QueryFilter queryFilter) {
         return ResponseEntity.ok(this.gearUseCase.findGear(queryFilter));
     }
 
