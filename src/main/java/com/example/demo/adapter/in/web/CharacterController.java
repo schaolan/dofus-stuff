@@ -27,7 +27,6 @@ public class CharacterController {
     @PostMapping("/characters")
     public ResponseEntity<Character> postCharacter(@RequestBody Character character, UriComponentsBuilder ucb) {
         Character response = this.characterUseCase.createCharacter(character);
-
         return ResponseEntity.created(ucb.path("characters/{id}")
                 .buildAndExpand(response.id()).toUri())
                 .body(response);
