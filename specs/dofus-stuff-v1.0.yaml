@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: Open Api Dofus
+  version: '1.0'
+tags:
+  - name: character
+  - name: gear
+paths:
+  /character:
+    post:
+      tags:
+        - character
+      summary: create a character
+      operationId: createCharacter
+      parameters:
+        - name: uriComponentsBuilder
+          in: query
+          schema:
+            $ref: './component/UriComponentsBuilder.yaml'
+      requestBody:
+        description: create a new character
+        content:
+          application/json:
+            schema:
+             $ref: './component/Character.yaml'
+      responses:
+        '200':
+          description: Successfull operation
+          content:
+            application/json:
+              schema:
+                $ref: './component/Character.yaml'
